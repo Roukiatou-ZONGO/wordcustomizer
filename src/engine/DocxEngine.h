@@ -5,7 +5,7 @@
 struct DocxStyle {
     std::string name;
     std::string fontFamily;
-    int fontSize;
+    int         fontSize;
     std::string color;
 };
 
@@ -20,11 +20,11 @@ public:
     std::vector<DocxStyle> getStyles();
 
 private:
-    std::string m_filePath;
-    std::string m_xmlContent;
-    bool        m_isLoaded;
+    std::string            m_filePath;
+    std::string            m_xmlContent;
+    bool                   m_isLoaded;
+    std::vector<DocxStyle> m_styles;
 
-    bool extractDocx(const std::string& path);
-    bool writeDocx(const std::string& path);
     void parseStyles();
+    bool writeDocx(const std::string& path);
 };
